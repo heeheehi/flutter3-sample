@@ -32,8 +32,7 @@ class _NewsTabState extends State<NewsTab> {
   void initState() {
     colors = getRandomColors(_itemsLength);
     titles = List.generate(_itemsLength, (index) => generateRandomHeadline());
-    contents =
-        List.generate(_itemsLength, (index) => lorem(paragraphs: 1, words: 24));
+    contents = List.generate(_itemsLength, (index) => lorem(paragraphs: 1, words: 24));
     super.initState();
   }
 
