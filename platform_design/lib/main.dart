@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_design/ui/theme/theme.dart';
 
 import 'news_tab.dart';
 import 'profile_tab.dart';
@@ -22,11 +23,7 @@ class MyAdaptingApp extends StatelessWidget {
     // Apps.
     return MaterialApp(
       title: 'Adaptive Music App',
-      theme: ThemeData(
-        // Use the green theme for Material widgets.
-        primarySwatch: Colors.green,
-        useMaterial3: true,
-      ),
+      theme: appTheme(context),
       darkTheme: ThemeData.dark(),
       builder: (context, child) {
         return CupertinoTheme(

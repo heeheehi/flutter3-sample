@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_color_resource.dart';
+import 'color_resource.dart';
 
 ColorScheme colorScheme = const ColorScheme(
   brightness: Brightness.light,

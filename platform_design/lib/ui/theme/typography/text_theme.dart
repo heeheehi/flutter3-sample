@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platform_design/ui/theme/app_font_resource.dart';
+import 'package:platform_design/ui/theme/typography/font_resource.dart';
 
 // TODO:
 //  어차피 바뀔 것이기 때문에 테스트 데이터 상태. 디자인 가이드 나오면 변경할 것.
