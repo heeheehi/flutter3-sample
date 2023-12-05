@@ -2,9 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_design/ui/common/CommonDialog.dart';
+import 'package:platform_design/ui/theme/color/color_scheme.dart';
+import 'package:platform_design/ui/theme/typography/text_theme.dart';
 
 import 'song_detail_tab.dart';
 import 'utils.dart';
@@ -31,9 +36,18 @@ class _SongsTabState extends State<SongsTab> {
   late List<MaterialColor> colors;
   late List<String> songNames;
 
+  late ScrollController controller;
+
+  String text = "State";
+  int selectedIndex = 0; // for radio
+  List<int> selectedList = [
+    0,
+  ]; // for checkbox
+
   @override
   void initState() {
     _setData();
+    controller = ScrollController();
     super.initState();
   }
 
@@ -55,9 +69,7 @@ class _SongsTabState extends State<SongsTab> {
 
     // Show a slightly different color palette. Show poppy-ier colors on iOS
     // due to lighter contrasting bars and tone it down on Android.
-    final color = defaultTargetPlatform == TargetPlatform.iOS
-        ? colors[index]
-        : colors[index].shade400;
+    final color = defaultTargetPlatform == TargetPlatform.iOS ? colors[index] : colors[index].shade400;
 
     return SafeArea(
       top: false,
@@ -80,6 +92,12 @@ class _SongsTabState extends State<SongsTab> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
   }
 
   void _togglePlatform() {
@@ -108,14 +126,14 @@ class _SongsTabState extends State<SongsTab> {
   // answer.
   // ===========================================================================
   Widget _buildAndroid(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         title: const Text(SongsTab.title),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: () async =>
-                await _androidRefreshKey.currentState!.show(),
+            onPressed: () async => await _androidRefreshKey.currentState!.show(),
           ),
           IconButton(
             icon: const Icon(Icons.shuffle),
@@ -127,11 +145,151 @@ class _SongsTabState extends State<SongsTab> {
       body: RefreshIndicator(
         key: _androidRefreshKey,
         onRefresh: _refreshData,
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          itemCount: _itemsLength,
-          itemBuilder: _listBuilder,
-        ),
+        child: Scrollbar(
+          controller: controller,
+          child: ScrollConfiguration(
+            behavior: const ScrollBehavior().copyWith(overscroll: true),
+            child: SingleChildScrollView(
+              controller: controller,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    width: 10,
+                    height: 26,
+                  ),
+                  TextField(
+                    onChanged: (it) {
+                      text = it;
+                    },
+                  ),
+                  const SizedBox(
+                    width: 10,
+                    height: 10,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      KTDialog(context);
+                    },
+                    child: const Text("Open Dialog"),
+                  ),
+                  FilledButton(
+                    onPressed: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (_) => Container(
+                          width: 300,
+                          padding: const EdgeInsets.all(10),
+                          child: const Text("blabla"),
+                        ),
+                      );
+                    },
+                    child: const Text("Open BottomSheet"),
+                  ),
+                  ...List.generate(
+                    3,
+                    (index) => TextButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Radio<int>(
+                            value: index,
+                            groupValue: selectedIndex,
+                            onChanged: (idx) {
+                              if (idx != null) {
+                                selectedIndex = index;
+                              }
+                            },
+                          ),
+                          Text(
+                            "Item${index + 1}",
+                            style: textTheme.bodyLarge,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Row(
+                    children: [
+                      Card(
+                        child: Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text("Card Text1"),
+                        ),
+                      ),
+                      Card(
+                        child: Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text("Card Text2"),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 10,
+                    height: 16,
+                  ),
+                  const Divider(indent: 10, endIndent: 10,),
+                  const SizedBox(
+                    width: 10,
+                    height: 5,
+                  ),
+                  ...List.generate(
+                    3,
+                    (index) {
+                      return TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Checkbox(
+                              value: selectedList.contains(index),
+                              onChanged: (isSelected) {
+                                setState(() {
+                                  if (isSelected == true) {
+                                    selectedList.add(index);
+                                  } else {
+                                    selectedList.remove(index);
+                                  }
+                                });
+                              },
+                            ),
+                            Text("Data ${index+1}", style: appTextTheme.titleMedium,)
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    width: 10,
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push<void>(
+                        MaterialPageRoute(
+                          builder: (context) => SongDetailTab(
+                            id: 1,
+                            song: songNames[1],
+                            color: colorScheme.primary,
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Text("Open Sub Page"),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ), // child: ListView.builder(
+        //   padding: const EdgeInsets.symmetric(vertical: 12),
+        //   itemCount: _itemsLength,
+        //   itemBuilder: _listBuilder,
+        // ),
       ),
     );
   }

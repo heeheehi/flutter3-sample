@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platform_design/ui/theme/component/bottomsheet_theme.dart';
 import 'package:platform_design/ui/theme/component/card_theme.dart';
 import 'package:platform_design/ui/theme/component/checkbox_theme.dart';
 import 'package:platform_design/ui/theme/component/dialog_theme.dart';
@@ -27,16 +28,17 @@ ThemeData appTheme(BuildContext context) {
         tall: appTextTheme // 페르시아, 인도어
     ),
     fontFamily: AppFontResource.pretendard,
-    cardTheme: appCardTheme(context),
-    buttonTheme: buttonThemeData(context),
-    checkboxTheme: appCheckBoxThemeData(context),
-    dialogTheme: appDialogTheme(context),
+    cardTheme: appCardTheme(colorScheme),
+    buttonTheme: buttonThemeData(colorScheme),
+    checkboxTheme: appCheckBoxThemeData(colorScheme),
+    dialogTheme: appDialogTheme(colorScheme, appTextTheme),
     dividerTheme: appDividerThemeData,
-    inputDecorationTheme: appInputDecorationTheme(context),
+    inputDecorationTheme: appInputDecorationTheme(colorScheme),
     pageTransitionsTheme: appPageTransitionsTheme,
-    radioTheme: appRadioThemeData(context),
-    snackBarTheme: appSnackBarThemeData(context),
-    switchTheme: appSwitchThemeData(context),
+    radioTheme: appRadioThemeData(colorScheme),
+    snackBarTheme: appSnackBarThemeData(colorScheme, appTextTheme),
+    switchTheme: appSwitchThemeData(colorScheme),
+    bottomSheetTheme: appBottomSheetThemeData(colorScheme),
     useMaterial3: true,
   );
 }

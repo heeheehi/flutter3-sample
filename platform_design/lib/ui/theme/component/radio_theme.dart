@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 
-RadioThemeData appRadioThemeData(BuildContext context) {
-  ColorScheme colorScheme = Theme.of(context).colorScheme;
+RadioThemeData appRadioThemeData(ColorScheme colorScheme) {
   return RadioThemeData(
     fillColor: MaterialStateColor.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(MaterialState.selected) || states.contains(MaterialState.pressed) || states.contains(MaterialState.focused)) {
         return colorScheme.primary;
       } else {
-        return colorScheme.background;
+        return colorScheme.surface;
       }
     }),
-    // TODO: overlayColor 가 background color 가 맞는지 확인
     overlayColor: MaterialStateColor.resolveWith((states) {
-      if (states.contains(MaterialState.selected)) {
-        return colorScheme.onPrimary;
+      if (states.contains(MaterialState.selected) || states.contains(MaterialState.pressed) || states.contains(MaterialState.focused)) {
+        return colorScheme.primary;
       } else {
-        return colorScheme.background;
+        return colorScheme.surface;
       }
     }),
   );

@@ -14,4 +14,5 @@ ColorScheme colorScheme = const ColorScheme(
   onBackground: ColorResource.appBlack,
   surface: ColorResource.surfaceColor,
   onSurface: ColorResource.appBlack,
+  outline: ColorResource.inputLineGrey,
 );

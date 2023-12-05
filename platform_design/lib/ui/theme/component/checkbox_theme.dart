@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-CheckboxThemeData appCheckBoxThemeData(BuildContext context) {
-  ColorScheme colorScheme = Theme.of(context).colorScheme;
+CheckboxThemeData appCheckBoxThemeData(ColorScheme colorScheme) {
   return CheckboxThemeData(
     fillColor: MaterialStateColor.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
@@ -27,8 +26,9 @@ CheckboxThemeData appCheckBoxThemeData(BuildContext context) {
       }
     }),
     splashRadius: AppShapeResource.smallShape,
-    shape: const RoundedRectangleBorder(
-      side: BorderSide(color: ColorResource.inputLineGrey)
+    shape: RoundedRectangleBorder(
+      side: const BorderSide(color: ColorResource.inputLineGrey),
+      borderRadius: BorderRadius.circular(AppShapeResource.extraSmallShape),
     ),
     side: MaterialStateBorderSide.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
@@ -36,6 +36,7 @@ CheckboxThemeData appCheckBoxThemeData(BuildContext context) {
       } else {
         return const BorderSide(color: ColorResource.inputLineGrey);
       }
-    })
+    }),
+    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap
   );
 }

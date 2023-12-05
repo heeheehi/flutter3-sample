@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
-import 'package:platform_design/ui/theme/color/color_scheme.dart';
-import 'package:platform_design/ui/theme/typography/font_resource.dart';
+import 'package:platform_design/ui/theme/typography/text_theme.dart';
 
-InputDecorationTheme appInputDecorationTheme(BuildContext context) {
-  ColorScheme colorScheme = Theme.of(context).colorScheme;
-  TextTheme textTheme = Theme.of(context).textTheme;
+InputDecorationTheme appInputDecorationTheme(ColorScheme colorScheme) {
+  TextTheme textTheme = appTextTheme;
   return InputDecorationTheme(
     filled: true,
+    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
     // container color
     fillColor: colorScheme.background,
     focusColor: colorScheme.background,
     hoverColor: colorScheme.background,
     // textStyle
+    labelStyle: textTheme.bodySmall?.copyWith(color: colorScheme.onBackground),
+    floatingLabelStyle: textTheme.bodySmall?.copyWith(color: colorScheme.onBackground),
     hintStyle: textTheme.bodySmall?.copyWith(color: colorScheme.onSurface),
     counterStyle: textTheme.bodySmall?.copyWith(color: colorScheme.onSurface),
     errorStyle: textTheme.bodySmall?.copyWith(color: colorScheme.error), // error Text Style
     // border style(only color)
-    activeIndicatorBorder: BorderSide(color: colorScheme.onPrimary),
-    outlineBorder: BorderSide(color: colorScheme.onPrimary),
+    outlineBorder: BorderSide(color: colorScheme.outline),
+    activeIndicatorBorder: BorderSide(color: colorScheme.outline),
     // border style(color, radius)
-    border: OutlineInputBorder(
-      borderSide: BorderSide(color: colorScheme.outline)
-    ),
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: colorScheme.primary),
     ),
@@ -37,6 +35,9 @@ InputDecorationTheme appInputDecorationTheme(BuildContext context) {
     ),
     errorBorder: OutlineInputBorder( // error Border Style
       borderSide: BorderSide(color: colorScheme.error)
+    ),
+    border: OutlineInputBorder(
+        borderSide: BorderSide(color: colorScheme.outline)
     ),
   );
 }

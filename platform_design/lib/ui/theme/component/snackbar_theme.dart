@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-SnackBarThemeData appSnackBarThemeData(BuildContext context) {
-  final theme = Theme.of(context);
-  ColorScheme colorScheme = theme.colorScheme;
-  TextTheme textTheme = theme.textTheme;
+SnackBarThemeData appSnackBarThemeData(ColorScheme colorScheme, TextTheme textTheme) {
   return SnackBarThemeData(
     backgroundColor: colorScheme.background,
     actionTextColor: colorScheme.onBackground,

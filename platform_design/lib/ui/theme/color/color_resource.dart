@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ColorResource {
   static const Color primaryColor = Color(0xFF8C93FF);
+  // static const Color primaryColor = Color(0xFFEE00FF);
   static const Color secondaryColor = Color(0xFF282A42);
-  static const Color surfaceColor = Color(0xFFEFEFEF);
   static const Color overlayBlur = Color(0xb3090b0e);
   static const Color lineGrey = Color(0xFFD9DDE3);
   static const Color hintGrey = Color(0xFF909DAD);
@@ -16,7 +16,10 @@ class ColorResource {
   static const Color red = Color(0xFFFE2E36);
   static const Color smallTextGrey = Color(0xFF546881);
   static const Color dialogDimming = Color(0x99000000);
+  static const Color shadow = Color(0x0a000000);
   static const Color cardShadow = Color(0x99000000);
   static const Color transparent = Color(0x00000000);
   static const Color navyAlpha = Color(0xe6282a42);
+  static const Color surfaceColor = Color(0xFFEFEFEF);
+  // static const Color surfaceColor = lineGrey;
 }
