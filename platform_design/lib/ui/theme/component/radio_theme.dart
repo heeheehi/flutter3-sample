@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-RadioThemeData appRadioThemeData(ColorScheme colorScheme) {
+RadioThemeData KTRadioThemeData(ColorScheme colorScheme) {
   return RadioThemeData(
     fillColor: MaterialStateColor.resolveWith((states) {
       if (states.contains(MaterialState.selected) || states.contains(MaterialState.pressed) || states.contains(MaterialState.focused)) {

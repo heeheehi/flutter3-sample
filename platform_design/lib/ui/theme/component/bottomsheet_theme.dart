@@ -3,7 +3,7 @@ import 'package:platform_design/ui/theme/color/color_resource.dart';
 
 import '../shape/shape.dart';
 
-BottomSheetThemeData appBottomSheetThemeData(ColorScheme colorScheme) {
+BottomSheetThemeData KTBottomSheetThemeData(ColorScheme colorScheme) {
   return BottomSheetThemeData(
     shadowColor: ColorResource.shadow,
     backgroundColor: ColorResource.dialogDimming,

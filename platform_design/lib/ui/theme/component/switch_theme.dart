@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-SwitchThemeData appSwitchThemeData(ColorScheme colorScheme) {
+SwitchThemeData KTSwitchThemeData(ColorScheme colorScheme) {
   return SwitchThemeData(
     thumbColor: MaterialStateColor.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {

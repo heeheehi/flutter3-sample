@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/typography/text_theme.dart';
 
-InputDecorationTheme appInputDecorationTheme(ColorScheme colorScheme) {
+InputDecorationTheme KTInputDecorationTheme(ColorScheme colorScheme) {
   TextTheme textTheme = appTextTheme;
   return InputDecorationTheme(
     filled: true,

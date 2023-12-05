@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-ButtonThemeData buttonThemeData(ColorScheme colorScheme) {
+ButtonThemeData KTButtonThemeData(ColorScheme colorScheme) {
   return ButtonThemeData(
     minWidth: 50.0,
     height: 36.0,

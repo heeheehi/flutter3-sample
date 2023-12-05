@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-DialogTheme appDialogTheme(ColorScheme colorScheme, TextTheme textTheme) {
+DialogTheme KTDialogTheme(ColorScheme colorScheme, TextTheme textTheme) {
   return DialogTheme(
     backgroundColor: colorScheme.background,
     elevation: 2.2,

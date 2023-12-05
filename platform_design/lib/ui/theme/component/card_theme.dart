@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/shape/shape.dart';
 
-CardTheme appCardTheme(ColorScheme colorScheme) {
+CardTheme KTCardTheme(ColorScheme colorScheme) {
   return CardTheme(
       color: colorScheme.background,
       surfaceTintColor: colorScheme.background,

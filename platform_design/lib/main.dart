@@ -112,10 +112,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
 
   @override
   Widget build(context) {
-    return PlatformWidget(
-      androidBuilder: _buildAndroidHomePage,
-      iosBuilder: _buildIosHomePage,
-    );
+    return _buildAndroidHomePage(context);
   }
 }
 

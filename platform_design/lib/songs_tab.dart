@@ -285,11 +285,7 @@ class _SongsTabState extends State<SongsTab> {
               ),
             ),
           ),
-        ), // child: ListView.builder(
-        //   padding: const EdgeInsets.symmetric(vertical: 12),
-        //   itemCount: _itemsLength,
-        //   itemBuilder: _listBuilder,
-        // ),
+        ),
       ),
     );
   }
@@ -325,9 +321,6 @@ class _SongsTabState extends State<SongsTab> {
 
   @override
   Widget build(context) {
-    return PlatformWidget(
-      androidBuilder: _buildAndroid,
-      iosBuilder: _buildIos,
-    );
+    return _buildAndroid(context);
   }
 }
