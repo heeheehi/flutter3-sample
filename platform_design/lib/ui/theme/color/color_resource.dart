@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorResource {
+class KTColorResource {
   static const Color primaryColor = Color(0xFF8C93FF);
   // static const Color primaryColor = Color(0xFFEE00FF);
   static const Color secondaryColor = Color(0xFF282A42);

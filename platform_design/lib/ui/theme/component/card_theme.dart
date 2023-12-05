@@ -7,8 +7,8 @@ CardTheme KTCardTheme(ColorScheme colorScheme) {
       color: colorScheme.background,
       surfaceTintColor: colorScheme.background,
       elevation: 3.5,
-      shadowColor: ColorResource.cardShadow,
+      shadowColor: KTColorResource.cardShadow,
       margin: const EdgeInsets.only(right: 16),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppShapeResource.smallShape)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(KTShapeResource.smallShape)),
   );
 }

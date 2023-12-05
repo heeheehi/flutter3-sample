@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'color_resource.dart';
 
-ColorScheme colorScheme = const ColorScheme(
+ColorScheme KTColorScheme = const ColorScheme(
   brightness: Brightness.light,
-  primary: ColorResource.primaryColor,
-  onPrimary: ColorResource.white,
-  secondary: ColorResource.secondaryColor,
-  onSecondary: ColorResource.white,
-  error: ColorResource.red,
-  onError: ColorResource.white,
-  background: ColorResource.white,
-  onBackground: ColorResource.appBlack,
-  surface: ColorResource.surfaceColor,
-  onSurface: ColorResource.appBlack,
-  outline: ColorResource.inputLineGrey,
+  primary: KTColorResource.primaryColor,
+  onPrimary: KTColorResource.white,
+  secondary: KTColorResource.secondaryColor,
+  onSecondary: KTColorResource.white,
+  error: KTColorResource.red,
+  onError: KTColorResource.white,
+  background: KTColorResource.white,
+  onBackground: KTColorResource.appBlack,
+  surface: KTColorResource.surfaceColor,
+  onSurface: KTColorResource.appBlack,
+  outline: KTColorResource.inputLineGrey,
 );

@@ -14,31 +14,31 @@ import 'color/color_scheme.dart';
 import 'component/button_theme.dart';
 import 'component/page_transition_theme.dart';
 
-ThemeData appTheme(BuildContext context) {
+ThemeData KTTheme(BuildContext context) {
   return ThemeData(
-    colorScheme: colorScheme,
-    textTheme: appTextTheme,
+    colorScheme: KTColorScheme,
+    textTheme: KTTextTheme,
     typography: Typography( // 언어, 다트 or 라이트 모드 일떼 텍스트 스타일 정의. 테스트로 다 똑같은 스타일 적용 중
-        white: appTextTheme,
-        black: appTextTheme,
-        englishLike: appTextTheme,
+        white: KTTextTheme,
+        black: KTTextTheme,
+        englishLike: KTTextTheme,
         // 영어
-        dense: appTextTheme,
+        dense: KTTextTheme,
         // 한 중 일어
-        tall: appTextTheme // 페르시아, 인도어
+        tall: KTTextTheme // 페르시아, 인도어
     ),
-    fontFamily: AppFontResource.pretendard,
-    cardTheme: KTCardTheme(colorScheme),
-    buttonTheme: KTButtonThemeData(colorScheme),
-    checkboxTheme: KTCheckBoxThemeData(colorScheme),
-    dialogTheme: KTDialogTheme(colorScheme, appTextTheme),
+    fontFamily: KTFontResource.pretendard,
+    cardTheme: KTCardTheme(KTColorScheme),
+    buttonTheme: KTButtonThemeData(KTColorScheme),
+    checkboxTheme: KTCheckBoxThemeData(KTColorScheme),
+    dialogTheme: KTDialogTheme(KTColorScheme, KTTextTheme),
     dividerTheme: KTDividerThemeData,
-    inputDecorationTheme: KTInputDecorationTheme(colorScheme),
+    inputDecorationTheme: KTInputDecorationTheme(KTColorScheme),
     pageTransitionsTheme: KTPageTransitionsTheme,
-    radioTheme: KTRadioThemeData(colorScheme),
-    snackBarTheme: KTSnackBarThemeData(colorScheme, appTextTheme),
-    switchTheme: KTSwitchThemeData(colorScheme),
-    bottomSheetTheme: KTBottomSheetThemeData(colorScheme),
+    radioTheme: KTRadioThemeData(KTColorScheme),
+    snackBarTheme: KTSnackBarThemeData(KTColorScheme, KTTextTheme),
+    switchTheme: KTSwitchThemeData(KTColorScheme),
+    bottomSheetTheme: KTBottomSheetThemeData(KTColorScheme),
     useMaterial3: true,
   );
 }

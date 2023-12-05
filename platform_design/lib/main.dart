@@ -23,7 +23,7 @@ class MyAdaptingApp extends StatelessWidget {
     // Apps.
     return MaterialApp(
       title: 'Adaptive Music App',
-      theme: appTheme(context),
+      theme: KTTheme(context),
       darkTheme: ThemeData.dark(),
       builder: (context, child) {
         return CupertinoTheme(

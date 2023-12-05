@@ -3,7 +3,7 @@ import 'package:platform_design/ui/theme/color/color_resource.dart';
 import 'package:platform_design/ui/theme/typography/text_theme.dart';
 
 InputDecorationTheme KTInputDecorationTheme(ColorScheme colorScheme) {
-  TextTheme textTheme = appTextTheme;
+  TextTheme textTheme = KTTextTheme;
   return InputDecorationTheme(
     filled: true,
     contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
@@ -28,7 +28,7 @@ InputDecorationTheme KTInputDecorationTheme(ColorScheme colorScheme) {
         borderSide: BorderSide(color: colorScheme.error)
     ),
     disabledBorder: const OutlineInputBorder(
-      borderSide: BorderSide(color: ColorResource.textDimGrey)
+      borderSide: BorderSide(color: KTColorResource.textDimGrey)
     ),
     enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: colorScheme.outline)

@@ -257,7 +257,7 @@ class _SongsTabState extends State<SongsTab> {
                                 });
                               },
                             ),
-                            Text("Data ${index+1}", style: appTextTheme.titleMedium,)
+                            Text("Data ${index+1}", style: KTTextTheme.titleMedium,)
                           ],
                         ),
                       );
@@ -274,7 +274,7 @@ class _SongsTabState extends State<SongsTab> {
                           builder: (context) => SongDetailTab(
                             id: 1,
                             song: songNames[1],
-                            color: colorScheme.primary,
+                            color: KTColorScheme.primary,
                           ),
                         ),
                       );

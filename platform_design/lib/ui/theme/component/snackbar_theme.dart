@@ -9,8 +9,8 @@ SnackBarThemeData KTSnackBarThemeData(ColorScheme colorScheme, TextTheme textThe
     contentTextStyle: textTheme.bodyMedium,
     elevation: 1.0,
     shape: RoundedRectangleBorder(
-      side: const BorderSide(color: ColorResource.transparent),
-      borderRadius: BorderRadius.circular(AppShapeResource.large)
+      side: const BorderSide(color: KTColorResource.transparent),
+      borderRadius: BorderRadius.circular(KTShapeResource.large)
     ),
   );
 }

@@ -7,7 +7,7 @@ ButtonThemeData KTButtonThemeData(ColorScheme colorScheme) {
     height: 36.0,
     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(AppShapeResource.large),
+      borderRadius: BorderRadius.circular(KTShapeResource.large),
     ),
     buttonColor: colorScheme.primary,
     disabledColor: colorScheme.surface,

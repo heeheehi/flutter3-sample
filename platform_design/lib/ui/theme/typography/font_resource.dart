@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class AppFontResource {
+class KTFontResource {
   static const String pretendard = 'Pretendard';
 
   /// 현재 프로젝트에서 사용되는 폰트

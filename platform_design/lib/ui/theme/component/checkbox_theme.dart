@@ -25,16 +25,16 @@ CheckboxThemeData KTCheckBoxThemeData(ColorScheme colorScheme) {
         return colorScheme.background;
       }
     }),
-    splashRadius: AppShapeResource.smallShape,
+    splashRadius: KTShapeResource.smallShape,
     shape: RoundedRectangleBorder(
-      side: const BorderSide(color: ColorResource.inputLineGrey),
-      borderRadius: BorderRadius.circular(AppShapeResource.extraSmallShape),
+      side: const BorderSide(color: KTColorResource.inputLineGrey),
+      borderRadius: BorderRadius.circular(KTShapeResource.extraSmallShape),
     ),
     side: MaterialStateBorderSide.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
         return BorderSide(color: colorScheme.primary);
       } else {
-        return const BorderSide(color: ColorResource.inputLineGrey);
+        return const BorderSide(color: KTColorResource.inputLineGrey);
       }
     }),
     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap

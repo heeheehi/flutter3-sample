@@ -6,9 +6,9 @@ DialogTheme KTDialogTheme(ColorScheme colorScheme, TextTheme textTheme) {
   return DialogTheme(
     backgroundColor: colorScheme.background,
     elevation: 2.2,
-    shadowColor: ColorResource.cardShadow, // dialogShadow 별도로 필요할지?
+    shadowColor: KTColorResource.cardShadow, // dialogShadow 별도로 필요할지?
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(AppShapeResource.medium),
+      borderRadius: BorderRadius.circular(KTShapeResource.medium),
     ),
     alignment: Alignment.center,
     titleTextStyle: textTheme.titleMedium,

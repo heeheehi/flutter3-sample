@@ -27,7 +27,7 @@ SwitchThemeData KTSwitchThemeData(ColorScheme colorScheme) {
     trackOutlineWidth: MaterialStateProperty.resolveWith<double>((states) {
       return 2; // TODO 확인 필요
     }),
-    splashRadius: AppShapeResource.medium, // TODO container or thumb 확인 필요
+    splashRadius: KTShapeResource.medium, // TODO container or thumb 확인 필요
     thumbIcon: MaterialStateProperty.resolveWith<Icon>((states) {
       if (states.contains(MaterialState.selected)) {
         return const Icon(Icons.thumb_up);
